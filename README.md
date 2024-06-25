@@ -1,4 +1,4 @@
-This application is created as an assignment for Play Studios.
+This application is created as an assignment.
 
 I used asp .net core mvc architecture with controllers and views to represent models.
 Also I used Microsoft Identity for authentication and authorization.
