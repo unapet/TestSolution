@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "All products";
+}
+@model IEnumerable<ProductModel>
+
+<div class="container">
+    <h3 class="display-4">All products</h3>
+    <div class="row">
+
+        @foreach (var product in Model)
+        {
+        <div class="col-md-4">
+                <partial name="_productThumbnail" model="@product" />
+        </div>
+        }
+
+    </div>
+</div>

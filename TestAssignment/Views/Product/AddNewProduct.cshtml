@@ -1,0 +1,39 @@
+﻿@model ProductModel
+
+@{
+    ViewData["Title"] = "Add new product";
+}
+<div class="container">
+    <h3 class="display-4">Add new product</h3>
+    <hr />
+    @if (ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congratulations</strong> You have added new product successfully. <br />
+            Click <a asp-controller="Product" asp-action="GetProduct" asp-route-id="@ViewBag.ProductId">here</a> to view the details
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+<form method="post" enctype="multipart/form-data" asp-action="AddNewProduct" asp-controller="Product">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Add product" class="btn btn-primary" />
+    </div>
+</form>
+</div>
